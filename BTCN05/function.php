@@ -6,8 +6,10 @@ function sum($a, $b )
 
 
 
-function findUserByUsername ($username  )
+function findUserByUsername($username)
 {
+    $content = file_get_contents('./data');
+    $users = unserialize($content);
     if(!empty($users))
     {
         for ($i = 0; $i < sizeof($users); $i++) {
@@ -18,6 +20,9 @@ function findUserByUsername ($username  )
             return null;
         }
     }
+   
+        
+    
 }
 
 function getCurentUser(){
